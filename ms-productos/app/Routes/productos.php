@@ -17,12 +17,12 @@ return function (App $app) {
     )->add(new AuthMiddleware());
 
    $app->put(
-    '/api/productos/{id}',
-    [ProductoController::class, 'actualizar']
-)->add(new AuthMiddleware());
+        '/api/productos/{id}',
+        [ProductoController::class, 'actualizar']
+    )->add(new AuthMiddleware());
 
-$app->delete(
-    '/api/productos/{id}',
-    [ProductoController::class, 'eliminar']
-)->add(new AuthMiddleware());
+    $app->delete(
+        '/api/productos/{id}',
+        [ProductoController::class, 'eliminar']
+    )->add(new AuthMiddleware());
 };

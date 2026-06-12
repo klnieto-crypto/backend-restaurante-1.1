@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Producto</title>
+</head>
+<body>
+
+<h2>Nuevo Producto</h2>
+
+<input type="text" id="nombre" placeholder="Nombre">
+<br><br>
+
+<textarea id="descripcion" placeholder="Descripción"></textarea>
+<br><br>
+
+<input type="number" id="precio" placeholder="Precio">
+<br><br>
+
+<input type="number" id="categoria_id" placeholder="ID Categoría">
+<br><br>
+
+<button onclick="crearProducto()">
+    Crear Producto
+</button>
+
+<pre id="resultado"></pre>
+
+<script>
+
+async function crearProducto() {
+
+    const respuesta = await fetch(
+        'http://localhost:8002/api/productos',
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type':'application/json'
+            },
+            body: JSON.stringify({
+                nombre: document.getElementById('nombre').value,
+                descripcion: document.getElementById('descripcion').value,
+                precio: document.getElementById('precio').value,
+                categoria: document.getElementById('categoria').value
+            })
+        }
+    );
+
+    const data = await respuesta.json();
+
+    document.getElementById('resultado')
+        .textContent =
+        JSON.stringify(data, null, 2);
+}
+
+</script>
+
+</body>
+</html>

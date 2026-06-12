@@ -33,7 +33,7 @@ class PedidoController
             'hora' => $data['hora'],
             'subtotal' => $data['subtotal'],
             'total' => $data['total'],
-            'estado' => 'pendiente'
+            'estado' => $data['estado']
         ]);
 
         $response->getBody()->write(
