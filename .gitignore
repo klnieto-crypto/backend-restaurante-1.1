@@ -1,0 +1,22 @@
+# Auth
+ms-auth/vendor/
+ms-auth/.env
+
+# Reservas
+ms-reservas/vendor/
+ms-reservas/.env
+
+# Productos
+ms-productos/vendor/
+ms-productos/.env
+
+# Pedidos
+ms-pedidos/vendor/
+ms-pedidos/.env
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
